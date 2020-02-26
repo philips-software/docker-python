@@ -12,7 +12,7 @@ jobs:
         submodules: true
     - name: Build Docker Images with python
       run: |
-        ./ci/docker_build_and_push.sh 3/vanilla-python python:buster
+        ./ci/docker_build_and_push.sh 3/vanilla-python python:buster python:latest
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
