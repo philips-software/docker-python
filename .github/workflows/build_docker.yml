@@ -6,13 +6,10 @@ jobs:
   build_python_buster:
     name: Build Python Buster
     runs-on: ubuntu-latest
-
     steps:
-
     - uses: actions/checkout@v1
       with:
         submodules: true
-
     - name: Build Docker Images with python
       run: |
         ./ci/docker_build_and_push.sh 3 python:buster
