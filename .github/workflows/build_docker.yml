@@ -4,7 +4,7 @@ name: Build Docker images
 
 jobs:
   build_python_buster:
-    name: Build Python Buster
+    name: Build Python Buster <3
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
