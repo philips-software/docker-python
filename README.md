@@ -1,6 +1,6 @@
 # docker-python
 
-[![Build Status](https://github.com/philips-software/docker-python/workflows/build_python_buster/badge.svg)](https://github.com/philips-software/docker-python/actions/)
+[![Build Status](https://github.com/philips-software/docker-python/workflows/build_python_buster/badge.svg)](https://github.com/philips-software/docker-python/workflows/build_python_buster/badge.svg)
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
 # Docker images
