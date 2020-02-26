@@ -15,7 +15,7 @@ jobs:
 
     - name: Build Docker Images with python
       run: |
-        ./ci/bin/docker_build_and_push.sh 3 python:buster
+        ./ci/docker_build_and_push.sh 3 python:buster
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
