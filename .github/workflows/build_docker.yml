@@ -1,0 +1,23 @@
+on: [push]
+
+name: Build Docker images
+
+jobs:
+  build_python_buster:
+    name: Build Python Buster
+    runs-on: debian:buster
+
+    steps:
+
+    - uses: actions/checkout@master
+      with:
+        submodules: true
+
+    - name: Build Docker Images with python
+      run: |
+        ./ci/bin/docker_build_and_push.sh 3 python:buster
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
