@@ -1,3 +1,4 @@
-[submodule "docker-ci-scripts"]
-	path = docker-ci-scripts
+[submodule "ci/bin"]
+	path = ci/bin
 	url = https://github.com/philips-software/docker-ci-scripts.git
+	branch = master
