@@ -1,0 +1,3 @@
+[submodule "docker-ci-scripts"]
+	path = docker-ci-scripts
+	url = https://github.com/philips-software/docker-ci-scripts.git
