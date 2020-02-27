@@ -43,7 +43,7 @@ https://github.com/philips-software/docker-python/tree/bbb5945481e1579c87293d16b
 
 ```
 $ docker run philipssoftware/python:tox cat REPO
-https://github.com/philips-software/docker-python/tree/bbb5945481e1579c87293d16bbf5cd654f3da158
+https://github.com/philips-software/docker-python/tree/eb0c55137fd741d5526de9e7ef5d15f69a9d5a56
 ```
 
 ### TAGS
