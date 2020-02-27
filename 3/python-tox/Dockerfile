@@ -1,0 +1,13 @@
+FROM python:buster
+MAINTAINER Forest Keepers <thales.sousa@philips.com>
+
+
+RUN apt-get update && \
+    apt-get install -y git netcat curl jq wget
+
+RUN pip install tox==3.14.5
+
+ADD REPO .
+ADD TAGS .
+
+CMD ["/bin/bash"]

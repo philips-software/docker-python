@@ -1,0 +1,35 @@
+on: [push]
+
+name: Build Docker images
+
+jobs:
+  build_python_buster:
+    name: python-buster
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: Build Docker Images with python
+      run: |
+        ./ci/docker_build_and_push.sh 3/vanilla-python python:buster python:latest
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+  build_python_tox:
+      name: python-tox
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+      - name: Build Docker Images with python
+        run: |
+          ./ci/docker_build_and_push.sh 3/python-tox python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+          DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+          GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
