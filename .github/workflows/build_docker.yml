@@ -18,3 +18,18 @@ jobs:
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
         DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
         GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+  build_python_tox:
+      name: python-tox
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+      - name: Build Docker Images with python
+        run: |
+          ./ci/docker_build_and_push.sh 3/python-tox python:tox-3.14.5 python:tox-latest
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+          DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
+          GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
