@@ -41,6 +41,11 @@ $ docker run philipssoftware/python:buster cat REPO
 https://github.com/philips-software/docker-python/tree/bbb5945481e1579c87293d16bbf5cd654f3da158
 ```
 
+```
+$ docker run philipssoftware/python:tox cat REPO
+https://github.com/philips-software/docker-python/tree/bbb5945481e1579c87293d16bbf5cd654f3da158
+```
+
 ### TAGS
 
 This contains all the similar tags at the point of creation. 
@@ -48,6 +53,12 @@ This contains all the similar tags at the point of creation.
 ```
 $ docker run philipssoftware/python cat TAGS
 python:buster python:latest
+```
+
+
+```
+$ docker run philipssoftware/python:tox cat TAGS
+python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
 ```
 
 You can use this to pin down a version of the container from an existing development build for production. When using `python:buster` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
