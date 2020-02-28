@@ -1,20 +1,25 @@
-# docker-python
+<div align="center">
 
-[![Build Status](https://github.com/philips-software/docker-python/workflows/python-buster/badge.svg)](https://github.com/philips-software/docker-python/workflows/python-buster/badge.svg)
+# Docker-python
+
+![Build Docker images](https://github.com/philips-software/docker-python/workflows/Build%20Docker%20images/badge.svg)
+![repolinter](https://github.com/philips-software/docker-python/workflows/repolinter/badge.svg)
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
-# Docker images
-
 This repo will contain docker images with _python_
+
+</div>
+
+## Docker images
 
 Current versions available:
 ```
 .
 ├── 3
-│   ├── vanilla-python
-│       └── Dockerfile
-│   ├── python-tox
-│       └── Dockerfile
+│   ├── python-tox
+│   │   └── Dockerfile
+│   └── vanilla-python
+│       └── Dockerfile
 ```
 ## Usage
 
