@@ -7,29 +7,29 @@ jobs:
     name: python-buster
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
+    - uses: actions/checkout@v2
     - name: Build Docker Images with python
-      run: |
-        ./ci/docker_build_and_push.sh 3/vanilla-python python:buster python:latest
+      uses: philips-software/docker-ci-scripts@v1.0.1
+      with:
+        dockerfile: 3/vanilla-python 
+        tags: python:buster python:latest 
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-        DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-        GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
   build_python_tox:
-      name: python-tox
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules: true
-      - name: Build Docker Images with python
-        run: |
-          ./ci/docker_build_and_push.sh 3/python-tox python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
-          DOCKER_ORGANIZATION: ${{ secrets.DOCKER_ORGANIZATION }}
-          GITHUB_ORGANIZATION: ${{ secrets.GITHUB_ORGANIZATION }}
+    name: python-tox
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker Images with python
+      uses: philips-software/docker-ci-scripts@v1.0.1
+      with:
+        dockerfile: 3/python-tox
+        tags: python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
