@@ -8,26 +8,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build Docker Images with python
-      uses: philips-software/docker-ci-scripts@v1.0.1
+    - name: Build Images
+      uses: philips-software/docker-ci-scripts@v3.1.0
       with:
-        dockerfile: 3/vanilla-python 
-        tags: python:buster python:latest 
+        dockerfile: 3/vanilla 
+        image-name: python
+        tags: latest buster 3.9
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
         DOCKER_ORGANIZATION: philipssoftware
         GITHUB_ORGANIZATION: philips-software
+
   build_python_tox:
     name: python-tox
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
-    - name: Build Docker Images with python
-      uses: philips-software/docker-ci-scripts@v1.0.1
+
+    - name: Build Images
+      uses: philips-software/docker-ci-scripts@v3.1.0
       with:
-        dockerfile: 3/python-tox
-        tags: python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
+        dockerfile: 3/tox 
+        image-name: python
+        tags: tox tox-3 tox-3.20 tox-3.20.1
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        DOCKER_ORGANIZATION: philipssoftware
+        GITHUB_ORGANIZATION: philips-software
+
+  build_python_with_openjdk:
+    name: python-openjdk
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Images
+      uses: philips-software/docker-ci-scripts@v3.1.0
+      with:
+        dockerfile: 3/openjdk 
+        image-name: python
+        tags: java java-3 java-3.9 
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'

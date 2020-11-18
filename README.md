@@ -16,9 +16,11 @@ Current versions available:
 ```
 .
 ├── 3
-│   ├── python-tox
+│   ├── openjdk
 │   │   └── Dockerfile
-│   └── vanilla-python
+│   ├── tox
+│   │   └── Dockerfile
+│   └── vanilla
 │       └── Dockerfile
 ```
 ## Usage
@@ -63,7 +65,7 @@ python:buster python:latest
 
 ```
 $ docker run philipssoftware/python:tox cat TAGS
-python:tox python:tox-3 python:tox-3.14 python:tox-3.14.5
+python:tox python:tox-3 python:tox-3.20 python:tox-3.20.1
 ```
 
 You can use this to pin down a version of the container from an existing development build for production. When using `python:buster` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
@@ -83,7 +85,6 @@ That's why we want our own docker file definitions.
 
 ## Author
 
-- Thales Sousa  <thales.sousa@philips.com>
 - Jeroen Knoops <jeroen.knoops@philips.com>
 
 ## License
