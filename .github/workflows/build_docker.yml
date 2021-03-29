@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build Images
-      uses: philips-software/docker-ci-scripts@v3.1.0
+      uses: philips-software/docker-ci-scripts@v3.2.1
       with:
         dockerfile: 3/vanilla 
         image-name: python
@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build Images
-      uses: philips-software/docker-ci-scripts@v3.1.0
+      uses: philips-software/docker-ci-scripts@v3.2.1
       with:
         dockerfile: 3/tox 
         image-name: python
@@ -47,7 +47,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build Images
-      uses: philips-software/docker-ci-scripts@v3.1.0
+      uses: philips-software/docker-ci-scripts@v3.2.1
       with:
         dockerfile: 3/openjdk 
         image-name: python
