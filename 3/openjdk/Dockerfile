@@ -24,6 +24,8 @@ RUN set -ex \
     && pyenv global $PYTHON_VERSION \
     && pyenv rehash
 
+RUN pip install --upgrade pip
+
 ADD REPO .
 ADD TAGS .
 
