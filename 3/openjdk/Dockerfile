@@ -1,7 +1,7 @@
-FROM debian:buster
+FROM debian:bullseye
 LABEL maintainer="Forest Keepers <Jeroen.knoops@philips.com>"
 
-ENV PYTHON_VERSION 3.9.2
+ENV PYTHON_VERSION 3.11.2
 
 RUN apt-get update && \
     apt-get install -y \
